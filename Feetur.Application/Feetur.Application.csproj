@@ -7,7 +7,12 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Feetur.Application.Data\Feetur.Application.Data.csproj" />
       <ProjectReference Include="..\Feetur.Domain\Feetur.Domain.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Exceptions" />
     </ItemGroup>
 
 </Project>

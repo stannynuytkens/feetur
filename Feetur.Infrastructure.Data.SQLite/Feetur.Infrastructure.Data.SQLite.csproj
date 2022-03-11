@@ -7,7 +7,12 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Feetur.Application.Data\Feetur.Application.Data.csproj" />
       <ProjectReference Include="..\Feetur.Infrastructure.Data\Feetur.Infrastructure.Data.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.3" />
     </ItemGroup>
 
 </Project>
