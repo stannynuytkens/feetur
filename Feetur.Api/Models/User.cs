@@ -1,6 +1,6 @@
-﻿namespace Feetur.Application.Data.Entities;
+﻿namespace Feetur.Api.Models;
 
-public class User: BaseEntity
+public class User
 {
     public string FirstName { get; set; }
 

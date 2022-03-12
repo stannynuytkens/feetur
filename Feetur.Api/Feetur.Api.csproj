@@ -14,6 +14,8 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Feetur.Application\Feetur.Application.csproj" />
+      <ProjectReference Include="..\Feetur.Infrastructure.Data.EF.Memory\Feetur.Infrastructure.Data.EF.Memory.csproj" />
+      <ProjectReference Include="..\Feetur.Infrastructure.Logging.Debug\Feetur.Infrastructure.Logging.Debug.csproj" />
     </ItemGroup>
 
 </Project>

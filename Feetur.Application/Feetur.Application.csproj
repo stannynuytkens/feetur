@@ -8,11 +8,13 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Feetur.Application.Data\Feetur.Application.Data.csproj" />
-      <ProjectReference Include="..\Feetur.Domain\Feetur.Domain.csproj" />
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="Commands" />
       <Folder Include="Exceptions" />
+      <Folder Include="Queries" />
+      <Folder Include="Services" />
     </ItemGroup>
 
 </Project>

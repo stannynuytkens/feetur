@@ -1,6 +1,6 @@
 ﻿namespace Feetur.Application.Data.Entities;
 
-public class Entity<TEntityId>: IEntity<TEntityId>
+public class BaseEntity<TEntityId>: IAuditedEntity<TEntityId>
 {
     public TEntityId Id { get; set; }
     
@@ -8,11 +8,11 @@ public class Entity<TEntityId>: IEntity<TEntityId>
 
     public DateTime Modified { get; set; }
 
-    public User CreatedBy { get; set; }
+    public string CreatedBy { get; set; }
 
-    public User ModifiedBy { get; set; }
+    public string ModifiedBy { get; set; }
 
     public bool Deleted { get; set; }
 }
 
-public class Entity: Entity<Guid> { }
+public class BaseEntity: BaseEntity<Guid> { }

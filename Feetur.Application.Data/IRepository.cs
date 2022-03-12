@@ -6,17 +6,18 @@ public interface IRepository<TEntity> : IRepository<TEntity, Guid> where TEntity
 
 public interface IRepository<TEntity, TEntityId> where TEntity: IEntity<TEntityId>
 {
-    Task<TEntity?> Get(Guid id);
-    Task<TEntity?> Get(Expression<Func<TEntity, bool>> predicate);
-    Task<IEnumerable<TEntity>> GetAll();
-    Task<IEnumerable<TEntity>> GetAll(Expression<Func<TEntity, bool>> predicate);
+    Task<TEntity?> GetAsync(TEntityId id, CancellationToken? cancellationToken = null);
+    Task<TEntity?> GetAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken? cancellationToken = null);
+    Task<IEnumerable<TEntity>> GetAllAsync(CancellationToken? cancellationToken = null);
+    Task<IEnumerable<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken? cancellationToken = null);
 
-    Task<TEntity?> Update(TEntity entity);
-    Task<IEnumerable<TEntity>> UpdateRange(IEnumerable<TEntity> entities);
+    Task UpdateAsync(TEntity entity, CancellationToken? cancellationToken = null);
+    Task UpdateRangeAsync(IEnumerable<TEntity> entities, CancellationToken? cancellationToken = null);
 
-    Task Add(TEntity entity);
-    Task AddRange(IEnumerable<TEntity> entities);
+    Task<TEntityId> AddAsync(TEntity entity, CancellationToken? cancellationToken = null);
+    Task AddRangeAsync(IEnumerable<TEntity> entities, CancellationToken? cancellationToken = null);
 
-    Task Delete(TEntity entity);
-    Task DeleteRange(IEnumerable<TEntity> entities);
+    Task<bool> DeleteAsync(TEntityId id, CancellationToken? cancellationToken = null);
+    Task<bool> DeleteAsync(TEntity entity, CancellationToken? cancellationToken = null);
+    Task DeleteRangeAsync(IEnumerable<TEntity> entities, CancellationToken? cancellationToken = null);
 }
